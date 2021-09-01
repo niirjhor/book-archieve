@@ -19,7 +19,7 @@ const resultShow = books => {
         div.classList.add('col');
         div.innerHTML = `
         <div class="card">
-            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top width=50px height=50px" alt="...">
+            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="book-title">${book.title}</h3>
                 <h5 class="book-author">${book.author_name[0]}</h5>
@@ -29,6 +29,15 @@ const resultShow = books => {
     `;
         showResultText.appendChild(div);
     }
+    const resultsFound = document.getElementById('results-found');
+    const p = document.createElement('p');
+    let numberOfSearch = `${book.numFoundExact}`.length;
+    console.log(numberOfSearch);
+    if (numberOfSearch === true) {
+        p.innerHTML = ``
+    }
+
+
 
 }
 
