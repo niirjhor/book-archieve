@@ -10,7 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body {
-            background-color: lightslategrey;
+            background-color: pink;
         }
     </style>
     <title>Open Library</title>
@@ -20,30 +20,38 @@
     <!-- NavBar starts  -->
 
     <!-- Header Section  -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Open Library</a>
+            <a class="navbar-brand text-white" href="#">Open Library</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    <a class="nav-link text-white" href="#">Features</a>
+                    <a class="nav-link text-white" href="#">Pricing</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <h2 class="text-center pt-5">Welcome to the biggest <span class="text-danger">Book Library</span></h2>
+    <p class="text-center fw-bold pt-3">Welcome to Open Library: An open, crowd-sourced database of books from around
+        the
+        world.
+        <br>
+        <span class="text-primary">
+            We also offer a free JSON API for anyone wanting to use it.</span>
+    </p>
     <section>
         <!-- Body Section  -->
         <div class="container">
             <form class="col-md-6 m-auto py-5">
                 <div class="input-group mb-3">
                     <input id='search-area' type="text" class="form-control"
-                        placeholder="Enter a bookname to search ...">
+                        placeholder="Enter a book name to search ...">
                     <div class="input-group-append">
                         <button id='search-books' onclick="searchButton()" type="button"
                             class="btn btn-primary">Search</button>
@@ -51,6 +59,7 @@
                 </div>
             </form>
         </div>
+
         <!-- error show section  -->
         <div id="error-result" class="text-center text-danger fw-bold">
         </div>
