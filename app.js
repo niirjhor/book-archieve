@@ -1,16 +1,17 @@
 // Error handling
 const errorDiv = document.getElementById('error-result');
 const searchAreaText = document.getElementById('search-area');
+const showResultText = document.getElementById('result-show-card');
 // search field text additon
 
 const searchButton = () => {
     const searchArea = searchAreaText.value;
     searchAreaText.value = '';
+    showResultText.innerHTML = '';
     //Error Handling
     if (searchArea === '') {
         errorDiv.innerText = "Search field can't be empty";
     }
-    // else if ()
     else {
         const url = `http://openlibrary.org/search.json?q=${searchArea}`;
 
@@ -23,13 +24,22 @@ const searchButton = () => {
 
 
 const resultShow = books => {
+
+    // Showing total search result count 
+    const resultFound = document.getElementById('result-found');
+    resultFound.textContent = '';
+    const p = document.createElement('p');
+    p.innerHTML = `
+        <p>Total ${books.numFound} Results</p>        
+        `;
+    resultFound.appendChild(p);
+
     //Error handling for not found book name
     if (books.numFound === 0) {
         errorDiv.innerText = "Search not found";
     }
     // Result of search
     for (const book of books.docs) {
-        const showResultText = document.getElementById('result-show-card');
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -44,6 +54,7 @@ const resultShow = books => {
         </div>
     `;
         showResultText.appendChild(div);
+
     }
 }
 
