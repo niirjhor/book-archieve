@@ -17,7 +17,7 @@ const searchButton = () => {
 
     }
     else {
-        const url = `http://openlibrary.org/search.json?q=${searchArea}`;
+        const url = `https://openlibrary.org/search.json?q=${searchArea}`;
         fetch(url)
             .then(res => res.json())
             .then(data => resultShow(data))
